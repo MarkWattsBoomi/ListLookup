@@ -1,0 +1,53 @@
+{
+  "name": "listlookup",
+  "version": "1.0.0",
+  "description": "looks up a value from a list and shows text",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack -p --config webpack.production.config.js",
+    "build-no-source-map": "webpack -p --config webpack.production.config.js --devtool none",
+    "upload": "node upload.js",
+    "test-unit": "jest --watch",
+    "test-integration": "testcafe-live chrome ./src/__tests__/integration",
+    "test-integration-remote": "testcafe-live remote ./src/__tests__/integration --qr-code",
+    "update": "node update.js",
+    "debug": "ngrok http --host-header=rewrite 8080"
+  },
+  "author": "Dell Boomi",
+  "license": "MIT",
+  "dependencies": {
+    "flow-component-model": "^1.4.5",
+    "mini-css-extract-plugin": "^0.8.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.3.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "tslint": "^5.20.1",
+    "tslint-loader": "^3.5.4",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0",
+    "write-file-webpack-plugin": "4.4.1"
+  },
+  "flow": {
+    "tenantId": "d1b3e73f-3f2a-4159-8fbb-ceb11a84e28d",
+    "id": "88b7b053-049b-402d-b614-597bed6a4b78",
+    "versionId": "",
+    "filenames": {
+      "js": "listlookup.js",
+      "css": "listlookup.css"
+    }
+  },
+  "peerDependencies": {},
+  "bundledDependencies": [],
+  "optionalDependencies": {}
+}
