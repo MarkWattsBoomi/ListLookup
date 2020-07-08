@@ -7,8 +7,8 @@ declare var manywho: any;
 
 class ListLookup extends FlowComponent {
 
-    caption: string;
-    value: string;
+    caption: string = '';
+    value: string = '';
 
     constructor(props: any) {
         super(props);
@@ -17,10 +17,15 @@ class ListLookup extends FlowComponent {
     async componentDidMount() {
         await super.componentDidMount();
         this.caption = this.model.label;
-        const currentValue: number = this.getStateValue() as number;
+        const currentValue: string = this.getStateValue() as string;
 
-        const list: FlowObjectDataArray = this.model.dataSource;
-        this.value = list.getItemWithPropertyName('numericValue', currentValue, 'Label').value;
+        if (currentValue && currentValue.length > 0) {
+            const v: number = parseInt(currentValue);
+            const list: FlowObjectDataArray = this.model.dataSource;
+            this.value = list.getItemWithPropertyName('numericValue', currentValue, 'Label').value;
+        } else {
+            this.value = 'No Value Recorded';
+        }
 
         this.forceUpdate();
     }
