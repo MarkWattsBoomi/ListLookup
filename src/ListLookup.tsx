@@ -31,12 +31,17 @@ class ListLookup extends FlowComponent {
     }
 
     render() {
-
-        return (
-            <div>
+        let content: any;
+        if (this.model.visible === true) {
+            content = (
             <span>
                 {this.caption + '  ' + this.value}
             </span>
+            );
+        }
+        return (
+            <div>
+            {content}
             </div>
             );
     }
