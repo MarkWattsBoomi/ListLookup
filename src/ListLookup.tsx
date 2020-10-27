@@ -32,11 +32,24 @@ class ListLookup extends FlowComponent {
 
     render() {
         let content: any;
+        const classes: string = 'list-lookup ' + this.getAttribute('classes', '');
+
         if (this.model.visible === true) {
             content = (
-            <span>
-                {this.caption + '  ' + this.value}
-            </span>
+                <div
+                    className={classes}
+                >
+                <span
+                    className="list-lookup-label"
+                >
+                    {this.caption + '  '}
+                </span>
+                <span
+                    className="list-lookup-value"
+                >
+                    {this.value}
+                </span>
+            </div>
             );
         }
         return (

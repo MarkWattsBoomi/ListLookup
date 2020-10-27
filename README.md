@@ -6,6 +6,12 @@ You specify the lookup list in the component's dataset and the value to look up 
 
 On the page you see the components Label attribute + " " + looked up value
 
+Respects hidden and addes classes attribute to base element
+
+list-lookup + classes
+list-lookup-label 
+list-lookup-value
+
 {
     "developerName": "ListOption",
     "developerSummary": null,
